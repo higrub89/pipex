@@ -1,5 +1,5 @@
 # Standard
-NAME				= push_swap
+NAME				= pipex
 
 # Directories
 LIBFT				= ./libft/libft.a
@@ -13,24 +13,10 @@ CFLAGS				= -Wall -Werror -Wextra -g $(INC)
 RM					= rm -f
 
 # Source Files
-COMMANDS_DIR		=	$(SRC_DIR)commands/push.c \
-						$(SRC_DIR)commands/rev_rotate.c \
-						$(SRC_DIR)commands/rotate.c \
-						$(SRC_DIR)commands/sort_stacks.c \
-						$(SRC_DIR)commands/sort_three.c \
-						$(SRC_DIR)commands/swap.c
-
-PUSH_SWAP_DIR		=	$(SRC_DIR)push_swap/handle_errors.c \
-						$(SRC_DIR)push_swap/init_a_to_b.c \
-						$(SRC_DIR)push_swap/init_b_to_a.c \
-						$(SRC_DIR)push_swap/push_swap.c \
-						$(SRC_DIR)push_swap/split.c \
-						$(SRC_DIR)push_swap/stack_init.c \
-						$(SRC_DIR)push_swap/stack_push.c \
-						$(SRC_DIR)push_swap/stack_utils.c
+COMMANDS_DIR		=	$(SRC_DIR)main.c \
 
 # Concatenate all source files
-SRCS 				= $(COMMANDS_DIR) $(PUSH_SWAP_DIR)
+SRCS 				= $(COMMANDS_DIR) 
 
 # Apply the pattern substitution to each source file in SRC and produce a corresponding list of object files in the OBJ_DIR
 OBJ 				= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
