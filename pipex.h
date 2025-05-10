@@ -1,13 +1,11 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rhiguita <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/10 22:18:18 by rhiguita          #+#    #+#             */
-/*   Updated: 2025/05/10 22:20:05 by rhiguita         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#ifndef PIPEX_H
+# define PIPEX_H
 
-Hola 
+# include "../libft/inc/ft_printf.h"
+# include "..libft/inc/libft.h"
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <sys/wait.h>
+
+
+#endif
