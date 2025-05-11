@@ -1,16 +1,31 @@
 #include "../inc/pipex.h"
 
-int main(int ac, char **av)
+int main()
 {
-    if(ac > 1)
+    int file_fd;
+
+    file_fd = open("in.txt", O_RDONLY);
+    if (file_fd == -1)
     {
-        int n = 0;
-        int num1 = atoi(av[1]);
-        int num2 = atoi(av[2]);
-        if (av[3][0] == '+')
-            n = num1 + num2;
-        printf("El resultado de la suma es: \n");
-        printf("%i \n", n);
+        perror("open");
+        return (1);
     }
+
+    if (dup2(file_fd, STDIN_FILENO) == -1)
+    {
+        perror("dup2");
+        close(file_fd);
+        return (1);
+    }
+
+    char buffer[100];
+    ssize_t bytes_read = read(STDIN_FILENO, buffer, sizeof(buffer) - 1);
+    if (bytes_read > 0)
+    {
+        buffer[bytes_read] = '\0';
+        printf("Leído del fichero: %s", buffer);
+    }
+
+    close(file_fd);
     return (0);
 }

@@ -3,6 +3,7 @@
 
 # include "../libft/inc/ft_printf.h"
 # include "../libft/inc/libft.h"
+# include <fcntl.h>
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <sys/wait.h>
@@ -10,6 +11,6 @@
 
 
 //BORRAR
-int main(int ac, char **av);
+int main();
 
 #endif
