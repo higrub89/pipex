@@ -2,8 +2,9 @@
 
 int main()
 {
-    int file_fd;
+    printf("eSTE ES EL NUEVO CAMBIO");
 
+    int file_fd;
     file_fd = open("in.txt", O_RDONLY);
     if (file_fd == -1)
     {
