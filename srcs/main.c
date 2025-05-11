@@ -1,32 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhiguita <rhiguita@student.42madrid>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/11 16:01:31 by rhiguita          #+#    #+#             */
+/*   Updated: 2025/05/11 16:01:35 by rhiguita         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/pipex.h"
 
-int main()
+int main(int ac, char **av, char **envp)
 {
-    printf("eSTE ES EL NUEVO CAMBIO");
+    int file_pipe[2];
+    pid_t id[2];
+    int status;
 
-    int file_fd;
-    file_fd = open("in.txt", O_RDONLY);
-    if (file_fd == -1)
-    {
-        perror("open");
-        return (1);
-    }
-
-    if (dup2(file_fd, STDIN_FILENO) == -1)
-    {
-        perror("dup2");
-        close(file_fd);
-        return (1);
-    }
-
-    char buffer[100];
-    ssize_t bytes_read = read(STDIN_FILENO, buffer, sizeof(buffer) - 1);
-    if (bytes_read > 0)
-    {
-        buffer[bytes_read] = '\0';
-        printf("Leído del fichero: %s", buffer);
-    }
-
-    close(file_fd);
+    if (ac != 5)
+        write((2, "format: file1 cmd1 cmd2 file2", 29), exit(1));
+    if (pipe(file_pipe) == -1)
+        (perror("Error:"), exit(1));
+    id[0] = process_one(av, envp, file_pipe);
+    id[1] = process_two(av, envp, file_pipe, ac);
+    close(file_pipe[0]);
+    close(file_pipe[1]);
+    waitpid(id[0], &status, 0);
+    waitpid(id[1], &status, 0);
+    exit(WEXITSTATUS(status));
     return (0);
-}
+} 
+
