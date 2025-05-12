@@ -25,7 +25,7 @@ CFLAGS				= -Wall -Werror -Wextra -g $(INC)
 RM					= rm -f
 
 # Source Files
-COMMANDS_DIR		=	$(SRC_DIR)main.c \
+COMMANDS_DIR		=	$(SRC_DIR) Debo agregar todas las funciones \\\
 
 # Concatenate all source files
 SRCS 				= $(COMMANDS_DIR) 
