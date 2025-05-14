@@ -30,6 +30,6 @@ char	*ft_get_path(char **full_cmd, char **envp);
 void	ft_error_file(int *file_pipe, char *file);
 int		ft_command_error(char *cmd);
 void	ft_is_empty(char *cmd);
-int main(int ac, char **av, char **envp)
+int main(int ac, char **av, char **envp);
 
 #endif

@@ -25,10 +25,12 @@ CFLAGS				= -Wall -Werror -Wextra -g $(INC)
 RM					= rm -f
 
 # Source Files
-COMMANDS_DIR		=	$(SRC_DIR)/srcs/pipex.c \
-									$(SRC_DIR)/srcs/pipex_handle_error.c \
-									$(SRC_DIR)/srcs/pipex_utils.c 
+COMMANDS_DIR		=	srcs/pipex.c \
+									srcs/pipex_handle_error.c \
+									srcs/pipex_utils.c \
 
+# Concatenate all source files
+SRCS 				= $(COMMANDS_DIR) 
 
 # Apply the pattern substitution to each source file in SRC and produce a corresponding list of object files in the OBJ_DIR
 OBJ 				= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
