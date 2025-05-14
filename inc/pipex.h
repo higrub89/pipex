@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rhiguita <rhiguita@student.42madrid>       +#+  +:+       +#+        */
+/*   By: rhiguita <rhiguita@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 16:01:52 by rhiguita          #+#    #+#             */
-/*   Updated: 2025/05/11 16:01:58 by rhiguita         ###   ########.fr       */
+/*   Updated: 2025/05/14 21:24:35 by rhiguita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,5 @@
 # include <sys/stat.h>
 # include <sys/wait.h>
 
-
-
-//BORRAR
-int main(int ac, char **av, char **envp);
 
 #endif
