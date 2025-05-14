@@ -64,6 +64,7 @@ static pid_t process_two(char **av, char **envp, int *file_pipe, int ac)
     }
     return (id);
 }
+
 int main(int ac, char **av, char **envp)
 {
     int file_pipe[2];
@@ -83,4 +84,3 @@ int main(int ac, char **av, char **envp)
     exit(WEXITSTATUS(status));
     return (0);
 } 
-
