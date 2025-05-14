@@ -25,9 +25,7 @@ CFLAGS				= -Wall -Werror -Wextra -g $(INC)
 RM					= rm -f
 
 # Source Files
-COMMANDS_DIR		=	$(SRC_DIR)	pipex.c \
-															pipex_utils.c \
-															pipex_handle_error.c \
+COMMANDS_DIR		=	$(SRC_DIR) 
 
 # Concatenate all source files
 SRCS 				= $(COMMANDS_DIR) 
