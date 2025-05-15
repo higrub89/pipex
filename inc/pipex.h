@@ -15,11 +15,11 @@
 
 # include "../libft/inc/ft_printf.h"
 # include "../libft/inc/libft.h"
-# include <fcntl.h>
 # include <errno.h>
+# include <fcntl.h>
 # include <stddef.h>
-# include <sys/types.h>
 # include <sys/stat.h>
+# include <sys/types.h>
 # include <sys/wait.h>
 
 int		exec_command(char **full_cmd, char **env);
@@ -30,6 +30,6 @@ char	*ft_get_path(char **full_cmd, char **envp);
 void	ft_error_file(int *file_pipe, char *file);
 int		ft_command_error(char *cmd);
 void	ft_is_empty(char *cmd);
-int main(int ac, char **av, char **envp);
+int		main(int ac, char **av, char **envp);
 
 #endif
