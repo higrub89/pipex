@@ -14,7 +14,6 @@
 
 int	ft_command_error(char *cmd)
 {
-	printf("%s\ncomando", cmd);
 	cmd = ft_strjoin(cmd, "\n");
 	write(2, "command not fount: ", 20);
 	write(2, cmd, ft_strlen(cmd));
