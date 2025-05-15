@@ -88,8 +88,10 @@ void ft_check_command(char *cmd, char **envp)
   else
   {
     path = ft_get_path(s_cmd, envp);
+    printf("%s", path);
     if (path == NULL || execve(path, s_cmd, envp) == -1)
       (ft_command_error(s_cmd[0]), ft_free_memory(s_cmd));
+    printf("%s\n", s_cmd[0]);
     ft_free_memory(s_cmd);
     free(path);
   }

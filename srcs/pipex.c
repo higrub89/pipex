@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   pipex.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rhiguita <rhiguita@student.42madrid>       +#+  +:+       +#+        */
+/*   By: rhiguita <rhiguita@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 16:01:31 by rhiguita          #+#    #+#             */
-/*   Updated: 2025/05/11 16:01:35 by rhiguita         ###   ########.fr       */
+/*   Updated: 2025/05/15 13:15:46 by rhiguita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/pipex.h"
 
 int ft_command_error(char *cmd)
-{
+{  
+    printf("%s\ncomando", cmd);
+    
     cmd = ft_strjoin(cmd, "\n");
+    
     write(2, "command not fount: ", 20);
     write(2, cmd, ft_strlen(cmd));
     free(cmd);
