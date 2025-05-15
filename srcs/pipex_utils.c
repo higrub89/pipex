@@ -79,8 +79,8 @@ char	*ft_get_path(char **full_cmd, char **envp)
 
 void	ft_check_command(char *cmd, char **envp)
 {
-	char **s_cmd;
-	char *path;
+	char	**s_cmd;
+	char	*path;
 
 	ft_is_empty(cmd);
 	s_cmd = ft_split(cmd, ' ');
