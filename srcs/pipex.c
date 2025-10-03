@@ -6,7 +6,7 @@
 /*   By: rhiguita <rhiguita@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 16:01:31 by rhiguita          #+#    #+#             */
-/*   Updated: 2025/05/15 13:15:46 by rhiguita         ###   ########.fr       */
+/*   Updated: 2025/06/12 16:30:46 by rhiguita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	ft_command_error(char *cmd)
 {
 	cmd = ft_strjoin(cmd, "\n");
+	
 	write(2, "command not fount: ", 20);
 	write(2, cmd, ft_strlen(cmd));
 	free(cmd);
@@ -72,7 +73,7 @@ int	main(int ac, char **av, char **envp)
 	int		status;
 
 	if (ac != 5)
-		(write(2, "format: file1 cmd1 cmd2 file2", 29), exit(1));
+		(write(2, "format: file1 cmd1 cmd2 file2\n", 30), exit(1));
 	if (pipe(file_pipe) == -1)
 		(perror("Error:"), exit(1));
 	id[0] = process_one(av, envp, file_pipe);
